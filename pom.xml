@@ -1,19 +1,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.spigotmc</groupId>
-  <artifactId>spigot</artifactId>
+
+  <groupId>org.spinotmc</groupId>
+  <artifactId>spinot</artifactId>
   <packaging>jar</packaging>
-  <version>1.7.10-R0.1-SNAPSHOT</version>
-  <name>Spigot</name>
+  <version>1.8-R0.1-SNAPSHOT</version>
+  <name>Spinot</name>
   <url>http://www.spigotmc.org</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <api.version>unknown</api.version>
     <junit.version>4.11</junit.version>
-    <minecraft.version>1.7.10</minecraft.version>
-    <minecraft_version>1_7_R4</minecraft_version>
+    <minecraft.version>1.8</minecraft.version>
+    <minecraft_version>1_8_R1</minecraft_version>
     <buildtag.prefix>git-Bukkit-</buildtag.prefix>
     <buildtag.suffix></buildtag.suffix>
   </properties>
@@ -29,6 +30,14 @@
     <repository>
       <id>repobo-snap</id>
       <url>http://repo.bukkit.org/content/groups/public</url>
+    </repository>
+    <repository>
+	  <id>md-5 repository</id>
+      <url>http://repo.md-5.net/content/repositories/public/</url>
+    </repository>
+    <repository>
+      <id>md-5 repository2</id>
+      <url>http://repo.md-5.net/content/repositories/snapshots/</url>
     </repository>
   </repositories>
 
@@ -94,6 +103,33 @@
       <groupId>com.google.code.gson</groupId>
       <artifactId>gson</artifactId>
       <version>2.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.avaje</groupId>
+      <artifactId>ebean</artifactId>
+      <version>2.7.3</version>
+      <type>jar</type>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.yaml</groupId>
+      <artifactId>snakeyaml</artifactId>
+      <version>1.9</version>
+      <type>jar</type>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>17.0</version>
+      <type>jar</type>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+        <groupId>commons-lang</groupId>
+        <artifactId>commons-lang</artifactId>
+        <version>2.3</version>
+        <scope>provided</scope>
     </dependency>
     <!-- testing -->
     <dependency>
@@ -220,17 +256,6 @@
                   <shadedPattern>org.bukkit.craftbukkit.libs.${project.dependencies[6].version}.com.mysql</shadedPattern>
                 </relocation>
                 !-->
-                <relocation>
-                    <pattern>org.bukkit.craftbukkit</pattern>
-                    <shadedPattern>org.bukkit.craftbukkit.v${minecraft_version}</shadedPattern>
-                    <excludes>
-                        <exclude>org.bukkit.craftbukkit.Main*</exclude>
-                    </excludes>
-                </relocation>
-                <relocation>
-                    <pattern>net.minecraft.server</pattern>
-                    <shadedPattern>net.minecraft.server.v${minecraft_version}</shadedPattern>
-                </relocation>
               </relocations>
             </configuration>
           </execution>
@@ -239,7 +264,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.3.2</version>
+        <version>2.4</version>
         <configuration>
           <source>1.6</source>
           <target>1.6</target>
