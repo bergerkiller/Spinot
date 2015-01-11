@@ -40,6 +40,10 @@
       <url>http://repo.md-5.net/content/repositories/snapshots/</url>
     </repository>
     <repository>
+      <id>md-5 repository3</id>
+      <url>http://repo.md-5.net/content/repositories/releases/</url>
+    </repository>
+    <repository>
       <id>spigot-repo</id>
       <url>https://hub.spigotmc.org/nexus/content/repositories/public/</url>
     </repository>
