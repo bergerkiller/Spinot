@@ -21,7 +21,7 @@ index 91627ff..d85ac62 100644
  
      <!-- This builds a completely 'ready to start' jar with all dependencies inside -->
      <build>
-+		<finalName>spinot.jar</finalName>
++		<finalName>spinot</finalName>
          <defaultGoal>install</defaultGoal>
          <plugins>
              <plugin>

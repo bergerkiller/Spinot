@@ -12,16 +12,15 @@ winget "https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/arti
 rem ----------------------- Downloading spigot -----------------------
 echo Downloading spigot...
 cd build
-"%gitdir%" -l -c "javaw -jar BuildTools.jar --rev 1.8.8 --skip-compile"
+"%gitdir%" -l -c "javaw -jar BuildTools.jar --rev %1 --skip-compile"
 rem ------------------------ Patching spigot -------------------------
 echo Patching spigot...
-cd ..\
-git apply patches\spinot-1.8.8.patch
+cd Spigot\Spigot-Server
+git apply ..\..\..\patches\spinot-%1.patch
 rem ------------------------ Compiling spinot ------------------------
 echo Compiling spinot...
-cd build\Spigot\Spigot-Server
-mvn -B -q clean install
+call mvn -B -l mvnlog.log clean install
 cd ..\..\..\
-çopy build\Spigot\Spigot-Server\target\spigot-1.8.8-R0.1-SNAPSHOT.jar spigot.jar
+çopy build\Spigot\Spigot-Server\target\spinot.jar spigot.jar
 rem -------------------------------------------------------------------
 echo Complete!

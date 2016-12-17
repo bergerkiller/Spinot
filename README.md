@@ -13,6 +13,10 @@ Dependencies
 Compilation
 ===========
 We use maven and a command shell to handle compliation.
-* Get your desired version `git checkout 1.8/1.9/1.10/1.11` (ex. `git checkout 1.11`)
-* Run the command `getspigot`
+* Clone the repo `
+* Run the command `getspigot <version>` replacing the version with one of the available versions.
 * Grab your file `spinot.jar`
+
+Available versions
+===========
+* 1.8.8
