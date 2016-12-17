@@ -10,17 +10,18 @@ echo Downloading BuildTools...
 mkdir build
 winget "https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar" -q -O "build\BuildTools.jar" --no-check-certificate
 rem ----------------------- Downloading spigot -----------------------
-echo Downloading spigot...
+echo Downloading Spigot...
 cd build
 "%gitdir%" -l -c "javaw -jar BuildTools.jar --rev %1 --skip-compile"
 rem ------------------------ Patching spigot -------------------------
-echo Patching spigot...
+echo Patching Spigot...
 cd Spigot\Spigot-Server
 git apply ..\..\..\patches\spinot-%1.patch
 rem ------------------------ Compiling spinot ------------------------
-echo Compiling spinot...
+echo Compiling Spinot...
+cd ..\
 call mvn -B -l mvnlog.log clean install
-cd ..\..\..\
-çopy build\Spigot\Spigot-Server\target\spinot.jar spigot.jar
+cd ..\..\
+copy build\Spigot\Spigot-Server\target\spinot.jar spinot.jar
 rem -------------------------------------------------------------------
-echo Complete!
+echo Complete! Get your file "spinot.jar"
