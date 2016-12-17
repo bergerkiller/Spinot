@@ -1,0 +1,41 @@
+diff --git a/pom.xml b/pom.xml
+index 95a9224..28257a6 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -1,8 +1,8 @@
+ <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+     <modelVersion>4.0.0</modelVersion>
+-    <groupId>org.spigotmc</groupId>
+-    <artifactId>spigot</artifactId>
++    <groupId>org.spinotmc</groupId>
++    <artifactId>spinot</artifactId>
+     <packaging>jar</packaging>
+     <version>1.9.4-R0.1-SNAPSHOT</version>
+     <name>Spigot</name>
+@@ -93,6 +93,7 @@
+ 
+     <!-- This builds a completely 'ready to start' jar with all dependencies inside -->
+     <build>
++		<finalName>spinot</finalName>
+         <plugins>
+             <plugin>
+                 <groupId>net.md-5</groupId>
+@@ -211,7 +212,7 @@
+                                     <pattern>org.gjt</pattern>
+                                     <shadedPattern>org.bukkit.craftbukkit.libs.org.gjt</shadedPattern>
+                                 </relocation>
+-                                <relocation>
++                                <!--<relocation>
+                                     <pattern>org.bukkit.craftbukkit</pattern>
+                                     <shadedPattern>org.bukkit.craftbukkit.v${minecraft_version}</shadedPattern>
+                                     <excludes>
+@@ -221,7 +222,7 @@
+                                 <relocation>
+                                     <pattern>net.minecraft.server</pattern>
+                                     <shadedPattern>net.minecraft.server.v${minecraft_version}</shadedPattern>
+-                                </relocation>
++                                </relocation>-->
+                             </relocations>
+                         </configuration>
+                     </execution>

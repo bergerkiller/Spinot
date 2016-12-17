@@ -1,7 +1,7 @@
 @echo off
 color a
+rem ---------------------------- Varialbes ---------------------------
 for /f "delims=" %%a in ('git --man-path') do @set gitdir=%%a/../../..\bin\bash.exe
-rem -q for mvn javaw for java
 rem ---------------------------- Clean up ----------------------------
 echo Cleaning up old files...
 rmdir /s /q build
@@ -22,6 +22,6 @@ echo Compiling Spinot...
 cd ..\
 call mvn -B -l mvnlog.log clean install
 cd ..\..\
-copy build\Spigot\Spigot-Server\target\spinot.jar spinot.jar
+copy build\Spigot\Spigot-Server\target\spinot.jar spinot-%1.jar
 rem -------------------------------------------------------------------
 echo Complete! Get your file "spinot.jar"
