@@ -13,13 +13,13 @@ Dependencies
 Compilation
 ===========
 We use maven and a command shell to handle compliation.
-* Clone the repo `
-* Run the command `getspigot <version>` replacing the version with one of the supported versions.
+* Clone the repo
+* Run the command `getspinot <version>` replacing the version with one of the available versions.
 * Grab your file `spinot.jar`
 
 Supported versions
 ===========
 * 1.8.8
-* 1.9 & 1.9.2 & 1.9.4
-* 1.10 & 1.0.2
+* 1.9.4
+* 1.10.2
 * 1.11
