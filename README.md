@@ -20,3 +20,6 @@ We use maven and a command shell to handle compliation.
 Available versions
 ===========
 * 1.8.8
+* 1.9.4
+* 1.10.2
+* 1.11
