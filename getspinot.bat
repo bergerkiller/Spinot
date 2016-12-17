@@ -16,7 +16,7 @@ cd build
 rem ------------------------ Patching spigot -------------------------
 echo Patching Spigot...
 cd Spigot\Spigot-Server
-git apply ..\..\..\patches\spinot-%1.patch
+2>NUL git apply --ignore-space-change --whitespace=fix ..\..\..\patches\spinot-%1.patch
 rem ------------------------ Compiling spinot ------------------------
 echo Compiling Spinot...
 cd ..\
