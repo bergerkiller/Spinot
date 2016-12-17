@@ -1,18 +1,18 @@
-Spigot
+Spinot
 ===========
 
-A Spigot-API and Bukkit implementation
+A repository for compiling Spigot-Server without versioning.
+Now using md5's Build Tools to compile.
 
-Website: [http://spigotmc.org](http://spigotmc.org)  
-Bugs/Suggestions: [http://www.spigotmc.org/forums/bugs-feature-requests.8/](http://www.spigotmc.org/forums/bugs-feature-requests.8/)  
-Contributing Guidelines: [CONTRIBUTING.md](https://github.com/SpigotMC/Spigot-API/blob/master/CONTRIBUTING.md)
+Dependencies
+===========
+* [Java JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html "Download Java JDK") (lower versions may work too)
+* [Git](https://git-scm.com/downloads "Download Git")
+* [Maven 3](http://maven.apache.org/download.html "Download maven 3")
 
 Compilation
------------
-
-We use maven to handle our dependencies.
-
-* Install [Maven 3](http://maven.apache.org/download.html)
-* Check out and install [Spigot-API](http://github.com/SpigotMC/Spigot)
-    * *Note*: this is not needed as the repository we use has Spigot-API too, but you might have a newer one (with your own changes :D)
-* Check out this repo and: `mvn clean package`
+===========
+We use maven and a command shell to handle compliation.
+* Get your desired version `git checkout 1.8/1.9/1.10/1.11` (ex. `git checkout 1.11`)
+* Run the command `getspigot`
+* Grab your file `spinot.jar`
